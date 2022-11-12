@@ -216,6 +216,7 @@ function displayCart(){
     let cartItems = localStorage.getItem("productsInCart");
     cartItems = JSON.parse(cartItems);
     let productContainer = document.querySelector(".product-container");
+    let costTotal = localStorage.getItem('totalCost');
     //console.log(cartItems);
     if(cartItems && productContainer){
         productContainer.innerHTML = '';
@@ -248,12 +249,27 @@ function displayCart(){
             `
         })
     } else if (cartItems == null) {
+        costTotal = 0.00;
         productContainer.innerHTML = `
             <div class="container noItems text-center mt-5 mb-5">
                 <h3>No Items In Cart!</h3>
             </div>
         `
     }
+    
+    productContainer.innerHTML += `
+            <div class="totalCostOfItem text-center">
+                <h4 class="titleofCost">
+                    Total Cost:
+                </h4>
+                <span>
+                    <h4 class="valueCost">
+                        $${costTotal}
+                    </h4>
+                </span>
+                <button class="btn btn-primary mb-3">Check Out</button>
+            </div>
+        `
 
     //console.log(cartItems);
 }
