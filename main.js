@@ -222,7 +222,7 @@ function displayCart(){
         Object.values(cartItems).map(item => {
             productContainer.innerHTML += `
             <div class="container product border border-dark">
-            <table class="table">
+            <table class="table text-center">
                 <thead class="ulo mx-auto">
                     <tr>
                         <th class="w-10" scope="col-1">Delete</th>
