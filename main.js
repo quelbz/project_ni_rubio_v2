@@ -240,7 +240,7 @@ function displayCart(){
                         <td>
                             ${item.qtyInCart}
                         </td>
-                        <td>${item.price}</td>
+                        <td>${item.price * item.qtyInCart}</td>
                     </tr>
                 </tbody>
             </table>
